@@ -1,6 +1,6 @@
 """Implementations of the GridStrategy class to easily graph multiple plots."""
 
-from ._abc import GridStrategy
+from ._abstract_strategy import GridStrategy
 
 import numpy as np
 
