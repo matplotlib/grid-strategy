@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+*.py[oc]
+__pycache__
+
+# Build detritus
+build/
+dist/
+.eggs
+*.egg-info/
+
+# Test detritus
+.tox/
+.pytest_cache/
+venv/
+.venv/
+.hypothesis/
+
+# Sphinx documentation
+docs/_build/
+
+.idea
+.cache
+.mypy_cache
