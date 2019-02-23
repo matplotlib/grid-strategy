@@ -6,3 +6,4 @@ Contributors
 - Paul Ganssle <paul@ganssle.io>
 - Konstantinos Oikonomou <kons.oikonomou@gmail.com>
 - Gurnek Singh Mokha <gurnekmokha96@gmail.com>
+- Morgan Haworth <morgan123haworth@gmail.com>
