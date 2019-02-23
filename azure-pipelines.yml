@@ -1,0 +1,35 @@
+---
+
+strategy:
+  matrix:
+    Python36:
+      python.version: '3.6'
+    Python37:
+      python.version: '3.7'
+    macOS:
+      python.version: '3.6'
+      POOL_IMAGE: macos-10.13
+    Windows:
+      python.version: '3.6'
+      POOL_IMAGE: vs2017-win2016
+      installzic: 'windows'
+
+variables:
+  TOXENV: py
+  POOL_IMAGE: ubuntu-16.04
+  PYTHON: 'python'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: $(python.version)
+
+- bash: |
+    $PYTHON -m pip install -U tox
+  displayName: Ensure prereqs
+
+- bash: |
+    $PYTHON -m tox
+  displayName: Run tox
+
+...
