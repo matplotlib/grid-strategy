@@ -51,3 +51,13 @@ def test_rectangular_strategy(rectangular_strategy, num_plots, grid_arrangement)
 )
 def test_square_strategy(square_strategy, num_plots, grid_arrangement):
     assert square_strategy.get_grid_arrangement(num_plots) == grid_arrangement
+
+
+# Test for bad input
+def test_strategy_with_bad_input(rectangular_strategy, square_strategy):
+    with pytest.raises(ValueError):
+        rectangular_strategy.get_grid(-1)
+        rectangular_strategy.get_grid(-1000)
+
+        square_strategy.get_grid(-1)
+        square_strategy.get_grid(-110)
