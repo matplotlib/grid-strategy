@@ -4,6 +4,7 @@ import itertools as it
 from abc import ABCMeta, abstractmethod
 
 from matplotlib import gridspec
+import matplotlib.pyplot as plt
 
 
 class GridStrategy(metaclass=ABCMeta):
@@ -45,23 +46,26 @@ class GridStrategy(metaclass=ABCMeta):
         else:
             col_width = 1
 
-        gs = gridspec.GridSpec(nrows, ncols * col_width)
+        gs = gridspec.GridSpec(
+            nrows, ncols * col_width, figure=plt.figure(constrained_layout=True)
+        )
 
         ax_specs = []
         for r, row_cols in enumerate(grid_arrangement):
             # This is the number of missing columns in this row. If some rows
             # are a different width than others, the column width is 2 so every
             # column skipped at the beginning is also a missing slot at the end.
-            if self.alignment == "center":
-                # Skip one for each missing column - centered
-                skip = ncols - row_cols
+            if self.alignment == "left":
+                # This is left-justified (or possibly full justification)
+                # so no need to skip anything
+                skip = 0
             elif self.alignment == "right":
                 # Skip two slots for every missing plot - right justified.
                 skip = (ncols - row_cols) * 2
             else:
-                # This is left-justified (or possibly full justification)
-                # so no need to skip anything
-                skip = 0
+                # Defaults to centered, as that is the default value for the class.
+                # Skip one for each missing column - centered
+                skip = ncols - row_cols
 
             for col in range(row_cols):
                 s = skip + col * col_width
