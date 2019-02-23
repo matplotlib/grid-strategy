@@ -6,15 +6,15 @@ from abc import ABCMeta, abstractmethod
 from matplotlib import gridspec
 
 
-
 class GridStrategy(metaclass=ABCMeta):
     """
     Static class used to compute grid arrangements given the number of subplots
     you want to show. By default, it goes for a symmetrical arrangement that is
     nearly square (nearly equal in both dimensions).
     """
-    def __init__(self, alignment='center'):
-        self.alignment=alignment
+
+    def __init__(self, alignment="center"):
+        self.alignment = alignment
 
     def get_grid(self, n):
         """  
@@ -35,7 +35,6 @@ class GridStrategy(metaclass=ABCMeta):
     @abstractmethod
     def get_grid_arrangement(cls, n):
         pass
-
 
     def get_gridspec(self, grid_arrangement):
         nrows = len(grid_arrangement)
