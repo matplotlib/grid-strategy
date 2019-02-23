@@ -13,6 +13,9 @@ strategy:
       python.version: '3.6'
       POOL_IMAGE: vs2017-win2016
       installzic: 'windows'
+    Black:
+      python.version: '3.7'
+      TOXENV: black-check
 
 variables:
   TOXENV: py

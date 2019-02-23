@@ -6,9 +6,9 @@ import numpy as np
 
 import itertools as it
 
+
 class SquareStrategy(GridStrategy):
-    SPECIAL_CASES = {3: (2, 1),
-                     5: (2, 3)}
+    SPECIAL_CASES = {3: (2, 1), 5: (2, 3)}
 
     @classmethod
     def get_grid_arrangement(cls, n):
@@ -127,8 +127,8 @@ class SquareStrategy(GridStrategy):
         assert n_buffer % 2 == 0, (n_more, n_less, n_buffer)
         n_buffer //= 2
 
-        buff_tuple = (m_v, ) * n_buffer
-        stripe_tuple = (m_v, l_v) * n_inner_stripes + (m_v, )
+        buff_tuple = (m_v,) * n_buffer
+        stripe_tuple = (m_v, l_v) * n_inner_stripes + (m_v,)
 
         return buff_tuple + stripe_tuple + buff_tuple
 
@@ -149,8 +149,9 @@ class SquareStrategy(GridStrategy):
         """
         total = n_more + n_less
         if total % 2:
-            msg = ('Expected an even number of values, ' +
-                   'got {} + {}').format(n_more, n_less)
+            msg = ("Expected an even number of values, " + "got {} + {}").format(
+                n_more, n_less
+            )
             raise ValueError(msg)
 
         assert n_more >= n_less, (n_more, n_less)
@@ -170,25 +171,26 @@ class SquareStrategy(GridStrategy):
         n_cells = 2 ** num_div
 
         # Make the largest possible odd unit cell
-        cell_s = total // n_cells            # Size of a unit cell
+        cell_s = total // n_cells  # Size of a unit cell
 
-        cell_buff = int(cell_s % 2 == 0)     # Buffer is either 1 or 0
+        cell_buff = int(cell_s % 2 == 0)  # Buffer is either 1 or 0
         cell_s -= cell_buff
         cell_nl = n_less // n_cells
         cell_nm = cell_s - cell_nl
 
         if cell_nm == 0:
-            stripe_cell = (less_val, )
+            stripe_cell = (less_val,)
         else:
             stripe_cell = cls.stripe_odd(cell_nm, more_val, cell_nl, less_val)
 
-        unit_cell = ((more_val, ) * cell_buff + stripe_cell)
+        unit_cell = (more_val,) * cell_buff + stripe_cell
 
         if num_div == 0:
             return unit_cell
 
         stripe_out = unit_cell * (n_cells // 2)
         return tuple(reversed(stripe_out)) + stripe_out
+
 
 class RectangularStrategy(GridStrategy):
     """Provide a nearest-to-square rectangular grid."""
