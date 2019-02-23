@@ -15,13 +15,16 @@ class SquareStrategy(GridStrategy):
         """
         Return an arrangement of rows containing ``n`` axes that is as close to
         square as looks good.
+
         :param n:
             The number of plots in the subplot
+
         :return:
             Returns a  :class:`tuple` of length ``nrows``, where each element
             represents the number of plots in that row, so for example a 3 x 2
             grid would be represented as ``(3, 3)``, because there are 2 rows
             of length 3.
+
         Example:
         --------
         .. code::
@@ -70,12 +73,16 @@ class SquareStrategy(GridStrategy):
         """
         Given a grid of size (``x`` x ``y``) to be filled with ``n`` plots,
         this arranges them as desired.
+
         :param n:
             The number of plots in the subplot.
+
         :param x:
             The number of columns in the grid.
+
         :param y:
             The number of rows in the grid.
+
         :return:
             Returns a :class:`tuple` containing a grid arrangement, see
             :func:`get_grid` for details.
@@ -104,14 +111,19 @@ class SquareStrategy(GridStrategy):
     def stripe_odd(cls, n_more, more_val, n_less, less_val):
         """
         Prepare striping for an odd number of rows.
+
         :param n_more:
             The number of rows with the value that there's more of
+
         :param more_val:
             The value that there's more of
+
         :param n_less:
             The number of rows that there's less of
+
         :param less_val:
             The value that there's less of
+
         :return:
             Returns a :class:`tuple` of striped values with appropriate buffer.
         """
@@ -136,14 +148,19 @@ class SquareStrategy(GridStrategy):
     def stripe_even(cls, n_more, more_val, n_less, less_val):
         """
         Prepare striping for an even number of rows.
+
         :param n_more:
             The number of rows with the value that there's more of
+
         :param more_val:
             The value that there's more of
+
         :param n_less:
             The number of rows that there's less of
+
         :param less_val:
             The value that there's less of
+
         :return:
             Returns a :class:`tuple` of striped values with appropriate buffer.
         """
@@ -200,13 +217,15 @@ class RectangularStrategy(GridStrategy):
         """
         Retrieves the grid arrangement that is the nearest-to-square rectangular
         arrangement of plots.
+
         :param n:
-        The number of subplots in the plot.
+            The number of subplots in the plot.
+
         :return:
             Returns a  :class:`tuple` of length ``nrows``, where each element
             represents the number of plots in that row, so for example a 3 x 2
             grid would be represented as ``(3, 3)``, because there are 2 rows
-            of length 3. 
+            of length 3.
         """
         # May not work for very large n because of the float sqrt
         # Get the two closest factors (may have problems for very large n)

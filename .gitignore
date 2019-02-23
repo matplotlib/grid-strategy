@@ -1,3 +1,6 @@
+# Doc files
+_build
+
 # Byte-compiled / optimized / DLL files
 *.py[oc]
 __pycache__
