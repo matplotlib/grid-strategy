@@ -5,6 +5,7 @@ from abc import ABCMeta, abstractmethod
 
 from matplotlib import gridspec
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 class GridStrategy(metaclass=ABCMeta):
@@ -41,6 +42,28 @@ class GridStrategy(metaclass=ABCMeta):
         nrows = len(grid_arrangement)
         ncols = max(grid_arrangement)
 
+        # If it has justified alignment, will not be the same as the other alignments
+        if self.alignment == "justified":
+            return self._justified(nrows, grid_arrangement)
+        else:
+            return self._ragged(nrows, ncols, grid_arrangement)
+
+    def _justified(self, nrows, grid_arrangement):
+        ax_specs = []
+        num_small_cols = np.lcm.reduce(grid_arrangement)
+        gs = gridspec.GridSpec(
+            nrows, num_small_cols, figure=plt.figure(constrained_layout=True)
+        )
+        for r, row_cols in enumerate(grid_arrangement):
+            skip = num_small_cols // row_cols
+            for col in range(row_cols):
+                s = col * skip
+                e = s + skip
+
+                ax_specs.append(gs[r, s:e])
+        return ax_specs
+
+    def _ragged(self, nrows, ncols, grid_arrangement):
         if len(set(grid_arrangement)) > 1:
             col_width = 2
         else:
