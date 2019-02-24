@@ -35,7 +35,7 @@ class GridStrategy(metaclass=ABCMeta):
 
     @classmethod
     @abstractmethod
-    def get_grid_arrangement(cls, n):
+    def get_grid_arrangement(cls, n):  # pragma: nocover
         pass
 
     def get_gridspec(self, grid_arrangement):
