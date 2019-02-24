@@ -1,9 +1,10 @@
 # grid-strategy
 
-[![PyPI version](https://img.shields.io/badge/PyPI-no-red.svg)](https://github.com/matplotlib/grid-strategy/issues)
+[![PyPI version](https://img.shields.io/pypi/v/grid-strategy.svg?style=flat-square)](https://pypi.org/project/grid-strategy/)
 [![Build Status](https://dev.azure.com/matplotlib/matplotlib/_apis/build/status/matplotlib.grid-strategy?branchName=master)](https://dev.azure.com/matplotlib/matplotlib/_build/latest?definitionId=2&branchName=master)
 [![Documentation Status](https://readthedocs.org/projects/grid-strategy/badge/?version=latest)](https://grid-strategy.readthedocs.io/en/latest/?badge=latest)
-[![Codecov](https://img.shields.io/badge/Codecov-no-red.svg)](https://github.com/matplotlib/grid-strategy/issues)
+[![codecov](https://codecov.io/gh/matplotlib/grid-strategy/branch/master/graph/badge.svg)](https://codecov.io/gh/matplotlib/grid-strategy)
+
 
 Grid-strategy is a python package that enables the user
 organize _matplotlib_ plots using different **grid strategies**.
