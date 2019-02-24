@@ -60,10 +60,13 @@ def test_square_strategy(square_strategy, num_plots, grid_arrangement):
 
 
 # Test for bad input
-def test_strategy_with_bad_input(rectangular_strategy, square_strategy):
+@pytest.mark.parametrize("n", [-1, -1000])
+def test_rectangular_strategy_with_bad_input(rectangular_strategy, n):
     with pytest.raises(ValueError):
-        rectangular_strategy.get_grid(-1)
-        rectangular_strategy.get_grid(-1000)
+        rectangular_strategy.get_grid(n)
 
-        square_strategy.get_grid(-1)
-        square_strategy.get_grid(-110)
+
+@pytest.mark.parametrize("n", [-1, -1000])
+def test_square_strategy_with_bad_input(square_strategy, n):
+    with pytest.raises(ValueError):
+        square_strategy.get_grid(n)
