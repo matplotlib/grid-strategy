@@ -70,4 +70,4 @@ Simply run:
 Then, in your project, do:
 `from grid_strategy import strategies`
 
-The strategies class has all usable strategies.
+The strategies module has all usable strategies.
