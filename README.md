@@ -35,9 +35,9 @@ The SquareStrategy alternates rows of x and x-1 columns
 to get as close as possible to a square shape for the plots.
 Some examples featuring this technique:
 
-<img src="https://gist.github.com/pganssle/afde3d9ae1e9f1d9349cff4a00ddead0/raw/b82d5c2fa3ab34579cfdd4e28be058230fdde199/grid_arrangement06.png" width="300" alt="n=6"> <img src="https://gist.github.com/pganssle/afde3d9ae1e9f1d9349cff4a00ddead0/raw/b82d5c2fa3ab34579cfdd4e28be058230fdde199/grid_arrangement07.png" width="300" alt="n=7">
+<img src="images/grid_arrangement06.png" width="300" alt="n=6"> <img src="images/grid_arrangement07.png" width="300" alt="n=7">
 
-<img src="https://gist.github.com/pganssle/afde3d9ae1e9f1d9349cff4a00ddead0/raw/b82d5c2fa3ab34579cfdd4e28be058230fdde199/grid_arrangement08.png" width="300" alt="n=8"> <img src="https://gist.github.com/pganssle/afde3d9ae1e9f1d9349cff4a00ddead0/raw/b82d5c2fa3ab34579cfdd4e28be058230fdde199/grid_arrangement17.png" width="300" alt="n=17">
+<img src="images/grid_arrangement08.png" width="300" alt="n=8"> <img src="images/grid_arrangement17.png" width="300" alt="n=17">
 
 This makes use of a `GridStrategy` object, which populates a `GridSpec`. In general, this concept can likely be implemented as a layer of abstraction *above* `gridspec.GridSpec`.
 
