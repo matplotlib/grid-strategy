@@ -1,0 +1,5 @@
+include AUTHORS.md
+include pyproject.toml
+include tox.ini
+recursive-include tests *.py
+recursive-include docs *
