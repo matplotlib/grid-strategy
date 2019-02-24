@@ -66,6 +66,8 @@ necessarily spawn axes across multiple figures.
 ### Installation Instructions
 Simply run:
 `pip install grid-strategy`
-Then, in your project, do
+
+Then, in your project, do:
 `from grid_strategy import strategies`
-and the strategies class has all usable strategies.
+
+The strategies class has all usable strategies.
