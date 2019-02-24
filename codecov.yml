@@ -1,0 +1,11 @@
+coverage:
+  status:
+    patch: false
+    changes: false
+    project:
+      default:
+        target: '50'
+
+comment: false
+codecov:
+  token: f57afce5-949d-4c97-9198-a9d9ba300f50
