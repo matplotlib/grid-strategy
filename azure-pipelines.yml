@@ -16,6 +16,12 @@ strategy:
     Black:
       python.version: '3.7'
       TOXENV: black-check
+    Docs:
+      python.version: '3.6'
+      TOXENV: docs
+    Build:
+      python.version: '3.6'
+      TOXENV: build
 
 variables:
   TOXENV: py
