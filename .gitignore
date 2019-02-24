@@ -9,6 +9,7 @@ __pycache__
 build/
 dist/
 dists/
+pip-wheel-metadata
 .eggs
 *.egg-info/
 
@@ -25,3 +26,4 @@ docs/_build/
 .idea
 .cache
 .mypy_cache
+.DS_STORE
