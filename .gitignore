@@ -8,6 +8,7 @@ __pycache__
 # Build detritus
 build/
 dist/
+dists/
 .eggs
 *.egg-info/
 
