@@ -6,6 +6,8 @@ import numpy as np
 
 import itertools as it
 
+__all__ = ["SquareStrategy", "RectangularStrategy"]
+
 
 class SquareStrategy(GridStrategy):
     SPECIAL_CASES = {3: (2, 1), 5: (2, 3)}
