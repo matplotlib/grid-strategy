@@ -170,7 +170,7 @@ class SquareStrategy(GridStrategy):
         """
         total = n_more + n_less
         if total % 2:
-            msg = ("Expected an even number of values, " + "got {} + {}").format(
+            msg = "Expected an even number of values, got {} + {}".format(
                 n_more, n_less
             )
             raise ValueError(msg)
