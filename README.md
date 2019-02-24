@@ -11,7 +11,7 @@ organize _matplotlib_ plots using different **grid strategies**.
 
 ## Abstract
 
-This package would add a mechanism for creating a grid of
+This package adds a mechanism for creating a grid of
 subplots based on the number of axes to be plotted and
 a strategy for how they should be arranged, with some
 sensible strategy as the default.
@@ -31,25 +31,24 @@ how many axes they want to plot, and they would
 get back a collection of axes arranged according
 to their strategy.
 
-A proof of concept was implemented for the 'squarish'
-strategy, which arranges plots in alternating rows
-of `x` and `x-1` objects. Some examples featuring this
-technique:
+The SquareStrategy alternates rows of x and x-1 columns
+to get as close as possible to a square shape for the plots.
+Some examples featuring this technique:
 
-<img src="https://gist.github.com/pganssle/afde3d9ae1e9f1d9349cff4a00ddead0/raw/b82d5c2fa3ab34579cfdd4e28be058230fdde199/grid_arrangement06.png" width="300" alt="n=6"> <img src="https://gist.github.com/pganssle/afde3d9ae1e9f1d9349cff4a00ddead0/raw/b82d5c2fa3ab34579cfdd4e28be058230fdde199/grid_arrangement07.png" width="300" alt="n=7">
+<img src="images/grid_arrangement06.png" width="300" alt="n=6"> <img src="images/grid_arrangement07.png" width="300" alt="n=7">
 
-<img src="https://gist.github.com/pganssle/afde3d9ae1e9f1d9349cff4a00ddead0/raw/b82d5c2fa3ab34579cfdd4e28be058230fdde199/grid_arrangement08.png" width="300" alt="n=8"> <img src="https://gist.github.com/pganssle/afde3d9ae1e9f1d9349cff4a00ddead0/raw/b82d5c2fa3ab34579cfdd4e28be058230fdde199/grid_arrangement17.png" width="300" alt="n=17">
+<img src="images/grid_arrangement08.png" width="300" alt="n=8"> <img src="images/grid_arrangement17.png" width="300" alt="n=17">
 
 This makes use of a `GridStrategy` object, which populates a `GridSpec`. In general, this concept can likely be implemented as a layer of abstraction *above* `gridspec.GridSpec`.
 
 Some basic strategies that will be included in the first release:
 
-- `"Squarish"` (name subject to change) - As implemented in the demo code above - currently this is centered, but the base `SquarishStrategy` object could have options like `justification` which could include:
+- `"Square"` - As implemented in the pictures above - currently this is centered, but the base `SquareStrategy` object has options for `alignment` which include:
     - `'center'` (default), `'left'`, `'right'` - empty spaces either center the plots or leave them ragged-left or ragged-right
-    - `'fill-space'` and `fill-grow'` (names subject to change) - These would fill every column as "fully-justified", with `fill-space` increasing the interstitial space and `fill-grow` modifying the width of the plots themselves to fill the row.
-- `"Rectangular"` - Similar to `"Squarish"`, this would find the largest pair of factors of the number of plots and use that to populate a rectangular grid - so `6` would return a 3x2 grid, `7` would return a 7x1 grid, and `10` would return a 5x2 grid.
+    - `'justified'` - This will fill every column as "fully-justified", with some plots being stretched to fill all of the colums in the row.
 
-Since many of these grid strategies would likely have at least *some* asymmetries, a mechanism for transposing any grid structure should be implemented in the base `GridStrategy` object.
+- `"Rectangular"` - Similar to `"Square"`, this would find the largest pair of factors of the number of plots and use that to populate a rectangular grid - so `6` would return a 3x2 grid, `7` would return a 7x1 grid, and `10` would return a 5x2 grid.
+
 
 ### Higher dimensions
 
@@ -63,3 +62,12 @@ figures"). This would be no harder to implement
 in terms of the creation of such strategies, but
 may be harder to work with since it would
 necessarily spawn axes across multiple figures.
+
+### Installation Instructions
+Simply run:
+`pip install grid-strategy`
+
+Then, in your project, do:
+`from grid_strategy import strategies`
+
+The strategies module has all usable strategies.
