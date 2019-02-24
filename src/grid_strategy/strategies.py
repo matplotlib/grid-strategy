@@ -27,9 +27,11 @@ class SquareStrategy(GridStrategy):
             grid would be represented as ``(3, 3)``, because there are 2 rows
             of length 3.
 
-        Example:
-        --------
+
+        **Example:**
+
         .. code::
+
             >>> GridStrategy.get_grid(7)
             (2, 3, 2)
             >>> GridStrategy.get_grid(6)

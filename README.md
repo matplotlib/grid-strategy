@@ -9,16 +9,14 @@
 Grid-strategy is a python package that enables the user
 organize _matplotlib_ plots using different **grid strategies**.
 
-Abstract
-----
+## Abstract
 
 This package would add a mechanism for creating a grid of
 subplots based on the number of axes to be plotted and
 a strategy for how they should be arranged, with some
 sensible strategy as the default.
 
-Detailed Description
-----
+## Detailed Description
 
 It is often the case that you have some number of
 plots to display (and this number may be unknown
