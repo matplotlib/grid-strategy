@@ -46,7 +46,13 @@ def test_rectangular_strategy(rectangular_strategy, num_plots, grid_arrangement)
         (9, (3, 3, 3)),
         (10, (3, 4, 3)),
         (12, (4, 4, 4)),
+        (14, (3, 4, 4, 3)),
+        (17, (3, 4, 3, 4, 3)),
         (20, (5, 5, 5, 5)),
+        (31, (6, 6, 7, 6, 6)),
+        (34, (6, 5, 6, 6, 5, 6)),
+        (58, (7, 8, 7, 7, 7, 7, 8, 7)),
+        (94, (9, 10, 9, 10, 9, 9, 10, 9, 10, 9)),
     ],
 )
 def test_square_strategy(square_strategy, num_plots, grid_arrangement):
