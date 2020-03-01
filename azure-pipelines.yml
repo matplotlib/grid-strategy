@@ -6,21 +6,23 @@ strategy:
       python.version: '3.6'
     Python37:
       python.version: '3.7'
+    Python38:
+      python.version: '3.8'
     macOS:
-      python.version: '3.6'
+      python.version: '3.7'
       POOL_IMAGE: macos-10.13
     Windows:
-      python.version: '3.6'
+      python.version: '3.7'
       POOL_IMAGE: vs2017-win2016
       installzic: 'windows'
     Black:
       python.version: '3.7'
       TOXENV: black-check
     Docs:
-      python.version: '3.6'
+      python.version: '3.7'
       TOXENV: docs
     Build:
-      python.version: '3.6'
+      python.version: '3.7'
       TOXENV: build
 
 variables:
